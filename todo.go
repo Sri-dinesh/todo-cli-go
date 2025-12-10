@@ -97,11 +97,11 @@ func (todos *Todos) print() {
 	
 
 	for index, t := range *todos {
-		completed := "No"
+		completed := "❌"
 		completedAt := " "
 
 		if t.Completed {
-			completed = "Yes"
+			completed = "✅"
 			if t.CompletedAt != nil {
 				completedAt = t.CompletedAt.Format(time.RFC1123)
 			}
