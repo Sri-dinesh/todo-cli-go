@@ -1,0 +1,19 @@
+# Go build output
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace and cache
+go.work
+go.work.sum
+**/.DS_Store
+**/.idea/
+**/.vscode/
+**/.env
+
+# Local data files
+todos.json
