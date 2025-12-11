@@ -42,13 +42,12 @@ func (cf *cmdFlags) Execute (todos *Todos) {
 	case cf.Add != "":
 		todos.add(cf.Add)
 
-	case cf.Toggle != -1:
+	case cf.Edit != "":
 		parts := strings.SplitN(cf.Edit, ":", 2)
-		if len(parts) != 2  {
+		if len(parts) != 2 {
 			fmt.Println("Invalid format for edit. Use id:new_title")
 			os.Exit(1)
 		}
-		
 		
 		index, err := strconv.Atoi(parts[0])
 		
@@ -57,11 +56,11 @@ func (cf *cmdFlags) Execute (todos *Todos) {
 			os.Exit(1)
 		}
 		
-		
 		todos.edit(index, parts[1])
 		
 	case cf.Toggle != -1:
 		todos.toggle(cf.Toggle)
+		
 	case cf.Del != -1:
 		todos.delete(cf.Del)
 		
